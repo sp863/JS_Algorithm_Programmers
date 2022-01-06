@@ -13,3 +13,10 @@ function solution(arr) {
 
   return answer;
 }
+
+//IDEAL SOLUTION
+// - filter 를 이용한 초간단 코드
+
+// function solution(arr) {
+//   return arr.filter((val, index) => val != arr[index + 1]);
+// }

@@ -12,3 +12,10 @@ function solution(s) {
 
   return num;
 }
+
+//IDEAL SOLUTION
+// - 엄청 간단
+
+// function strToInt(str){
+//   return  +str;
+// }
