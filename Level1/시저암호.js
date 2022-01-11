@@ -1,5 +1,3 @@
-"use strict";
-
 function solution(s, n) {
   var answer = "";
 
@@ -19,16 +17,31 @@ function solution(s, n) {
     if (idx === -1) answer += " ";
     else {
       idx += n;
-      console.log(idx);
-      console.log(arr.length - 1);
       if (idx > arr.length - 1) idx = idx - (arr.length - 1) - 1;
-      console.log(idx);
       if (isUpper) answer += arr[idx].toUpperCase();
       else answer += arr[idx];
     }
   }
-  console.log(answer);
   return answer;
 }
 
-solution("z", 1);
+//IDEAL SOLUTION
+// - index of 쓰는걸 왜 몰랐지
+function solution(s, n) {
+  var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var lower = "abcdefghijklmnopqrstuvwxyz";
+  var answer = "";
+
+  for (var i = 0; i < s.length; i++) {
+    var text = s[i];
+    if (text == " ") {
+      answer += " ";
+      continue;
+    }
+    var textArr = upper.includes(text) ? upper : lower;
+    var index = textArr.indexOf(text) + n;
+    if (index >= textArr.length) index -= textArr.length;
+    answer += textArr[index];
+  }
+  return answer;
+}
