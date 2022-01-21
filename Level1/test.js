@@ -1,7 +1,27 @@
 "use strict";
 
-for (var i = 1; i < 6; i++) {
-  setTimeout(function timer() {
-    console.log(i);
-  }, i * 1000);
+function solution(s) {
+  let numbers = [
+    "zero",
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+  ];
+  var answer = s;
+
+  for (let i = 0; i < numbers.length; i++) {
+    let arr = answer.split(numbers[i]);
+    console.log(arr);
+    answer = arr.join(i);
+  }
+
+  return Number(answer);
 }
+
+solution("one4seveneight");
