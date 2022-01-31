@@ -14,3 +14,5 @@ class Solution {
         return answer = max_v * max_h;
     }
 }
+
+//java code...javascript fix
